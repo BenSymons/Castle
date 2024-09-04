@@ -6,13 +6,12 @@ let castleRow: any;
 
 
 export default function castle(board: any) {
-    victims = []
     findCastle(board)
     checkLeft(board)
     checkRight(board)
     checkUp(board)
     checkDown(board)
-    if(victims.length === 0 ) return false;
+    if(!victims.length) return false;
     return victims;
 };
 
