@@ -22,15 +22,16 @@ describe('advanced tests', () => {
   it(`Given pieces are available both horizontally and vertically
     castely will return those pieces in an array`, () => {
     const expected = castle(boards[6]);
-    expect(expected).toContain(['K']);
-    expect(expected).toContain(['P']);
+    expect(expected).toContain('K');
+    expect(expected).toContain('P');
   });
   it(`Given pieces are available both horizontally and vertically
       And there are other pieces on the row/column that are not available
       Then castle returns an array of only the available pieces`, () => {
     const expected = castle(boards[7]);
-    expect(expected).toContain(['K']);
-    expect(expected).toContain(['P']);
-    expect(expected).toContain(['Q']);
+    expect(expected).toContain('K');
+    expect(expected).toContain('P');
+    expect(expected).toContain('Q');
+    expect(expected).toHaveLength(3);
   })
 })
