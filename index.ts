@@ -6,6 +6,7 @@ let castleRow: any;
 
 
 export default function castle(board: any) {
+    victims = []
     findCastle(board)
     checkLeft(board)
     checkRight(board)

@@ -13,8 +13,7 @@ function castle(board) {
     checkRight(board);
     checkUp(board);
     checkDown(board);
-    console.log(castleColumn, castleRow);
-    if (victims.length === 0)
+    if (!victims.length)
         return false;
     return victims;
 }
@@ -33,7 +32,6 @@ function findCastle(board) {
 function checkLeft(board) {
     for (var y = castleColumn - 1; y >= 0; y--) {
         if (board[castleRow][y] !== "_") {
-            console.log(board[castleRow][y]);
             victims.push(board[castleRow][y]);
             break;
         }
@@ -42,7 +40,6 @@ function checkLeft(board) {
 function checkRight(board) {
     for (var y = castleColumn + 1; y < BOARD_LENGTH; y++) {
         if (board[castleRow][y] !== "_") {
-            console.log(board[castleRow][y]);
             victims.push(board[castleRow][y]);
             break;
         }
@@ -51,7 +48,6 @@ function checkRight(board) {
 function checkUp(board) {
     for (var x = castleRow - 1; x >= 0; x--) {
         if (board[x][castleColumn] !== "_") {
-            console.log(board[x][castleColumn]);
             victims.push(board[x][castleColumn]);
             break;
         }
@@ -60,7 +56,6 @@ function checkUp(board) {
 function checkDown(board) {
     for (var x = castleRow + 1; x < BOARD_HEIGHT; x++) {
         if (board[x][castleColumn] !== "_") {
-            console.log(board[x][castleColumn]);
             victims.push(board[x][castleColumn]);
             break;
         }
