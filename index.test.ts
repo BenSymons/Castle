@@ -4,7 +4,7 @@ import { describe, test, mock } from "node:test";
 import assert from 'node:assert';
 import * as all from '.';
 
-mock.module('./src/index.ts', {
+mock.module('./index.ts', {
   namedExports: {
     add: () => 3
   }
@@ -12,12 +12,13 @@ mock.module('./src/index.ts', {
 
 describe('basic tests', async () => {
   test('returns false if no pieces can be captured', async () => {
-    const { add } = await import('.')
+    const { add } = await import('./index.ts')
     console.log(all, '<-- all');
     assert.strict.equal(all.castle(boards[0]), false);
     assert.strict.equal(all.castle(boards[1]), false);
     // mock.method(all, 'add', () => 3);
-    console.log(add(6, 7));
+    console.log(add(6,7))
+    assert.strictEqual(add(6,7), 3)
   });
 //   test(`Given a piece is piece is available horizontally
 //       castle will return that piece in an array`, () => {
