@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/BenSymons/Castle/issues"
   },
-  "homepage": "https://github.com/BenSymons/Castle#readme"
+  "homepage": "https://github.com/BenSymons/Castle#readme",
+  "type": "module"
 }
